@@ -37,7 +37,7 @@
     <h2>Projects</h2>
 
     <div class="project-card">
-      <img src="images/project1.jpg" alt="Project 1 photo" class="project-img">
+      <img src="images/CF Heated Tool.jpg" alt="Project 1 photo" class="project-img">
       <div class="project-info">
         <h3>Boat Research & Development Engineering Intern</h3>
         <p class="meta">Role: Lead Engineering Intern | Summer 2026</p>
@@ -82,24 +82,43 @@
     </div>
 
      <div class="project-card">
-      <img src="images/project2.jpg" alt="Project 2 photo" class="project-img">
+      <img src="images/Airfoil Cover Photo.jpg" alt="Project 3 photo" class="project-img">
       <div class="project-info">
-        <h3>Heat Sink & Heat Exchanger CFD</h3>
+        <h3>Airfoil CFD Simulation</h3>
         <p><strong>Problem:</strong>
-          Analyze the fluid flow around both a heat sink and a heat exchanger. Understand and document the verification of the simulation.</p>
+          Analyze the effect of an airfoil's angle of attack on the velocty and pressure in the domain around it. Understand test results and verify.</p>
         <p><strong>Approach:</strong> 
-          Simulations were all done using ANSYS Fluent. The heat exchanger simulated flow through the exchanger, whereas the heat sink simulated flow in the domain around
-          the heat sink. A mesh was created for the heat sink. Due to the heat sink geometry, the mesh was broken into sections to prioritize smaller elements around the
-          heat sink, and larger elements - therefore larger interpolations - further away from the entity. Once simulations were conducted, verification was done using the
-          ANSYS Fluent Report systems.</p>
+          The simulations were done using ANSYS Fluent. 
+          The airfoil was created using the Fluent Boolean Extraction (or Subtraction) tool. This allowed me to simulate the effect of the airfoil on its immediate domain.
+          Three angles of attack were recorded, 7deg, 10deg, and 15deg. The 7deg and 15deg angles were done by altering the domain with respect to a horizontally-fixed airfoil.
+          The 10deg simulation was done by altering the airfoil's angle relative to a horizontal domain flow.</p>
         <p><strong>Result:</strong>
-          The heat exchanger temperature contours was confirmed using the ANSYS Fluent Flux and Mass Reports. The Flux Report reported a conservation of energy, as the
-          outlet wattage of -3622.41W summed with a heat loss of 1327.95W matches in the input energy. I further confirmed this with the Mass Flow Rate, which showed
-          the kg/s remains constant through the exchanger.
-          While my heat sink was not as successful, it was gained experience in biasing domain elements towards the target being simulated, in this case I modelled the 
-          domain with rough 150,000 elements.</p>
+          The velocity and pressure gradients of the 7deg airfoil showcase the relationship between high pressure-low velocity and low pressure-high velocity - best represented 
+          right above and below the stagnation point. The equation D=(C_d)(1/2)(pv^2)(A), where A = projected cross area, was used to verify drag force. Using this equation
+          resulted in negative drag force and coefficients for the 7 and 15deg tests, which led to testing at 10deg with the altered set up mentioned above. The 10deg simulation
+          resulted in positive drag force and coefficient, but the coefficient was much too high. As shown in the report, the C_d was much too high, around 62, whereas it would 
+          more realistically be around 0.025 to 0.016 (which an estimated projected area).</p>
+        <a href="Hissong - HW7 - Solutions.pdf" target="_blank">View Airfoil Report</a></p>
+      </div>
+    </div>
+
+         <div class="project-card">
+      <img src="images/Exchanger Cover Photo.jpg" alt="Project 4 photo" class="project-img">
+      <div class="project-info">
+        <h3>Heat Exchanger CFD Simulation</h3>
+        <p><strong>Problem:</strong>
+          Analyze how temperature and fluid flow through a heat exchanger. Understand and document the verification of the simulation.</p>
+        <p><strong>Approach:</strong> 
+          The simulation was done using ANSYS Fluent.
+          The heat exchanger was imported from McMaster-Carr, using a cold-plate exchanger. Water was the simulated fluid with an inlet temperature around 340K and a thermal
+          conductivity of 5.97 W/(m*K). In this instance, the mesh consisted of the piping of the exchanger and the domain where the fluid flows through it. Meshing was done
+          independently between the two components.</p>
+        <p><strong>Result:</strong>
+          Seen in the report linked below, gradients were captured of both the outer pipe and symmetry plan (middle of the pipe) to analyze the change in temperature distribution
+          through the fluid. Fluent Flux Reports of Heat Transfer Rate and Mass Flow Rate were used as verification methods. Both resulted in a net rate of 0, where the heat 
+          transfer in was equalled by the combination of the outlet heat and pipe wall (representing heat loss to the wall). Therefore satisfying the Conversation of Energy. The
+          mass flow saw equal inlet and outlet values (in kg/s), which confirms Conversation of Mass.</p>
         <a href="Hissong - Design Project - Heat Exchanger - MENG465.pdf" target="_blank">View Heat Exchanger Report</a></p>
-        <a href="Hissong - Design Project - Heat Sink - MENG465.pdf" target="_blank">View Heat Sink Report</a></p>
       </div>
     </div>
     <!-- Copy the .project-card block above to add more projects -->
