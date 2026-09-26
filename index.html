@@ -324,17 +324,17 @@
         </div>
     </footer>
 
-<!-- LIGHTBOX MODAL CONTAINER -->
-<div id="imageModal" class="fixed inset-0 z-50 hidden bg-titanium-900/80 backdrop-blur-md flex items-center justify-center p-4 transition-all duration-300">
-    <div class="relative max-w-5xl max-h-[90vh] flex flex-col items-center">
+<!-- EXPANDED LIGHTBOX MODAL CONTAINER -->
+<div id="imageModal" class="fixed inset-0 z-50 hidden bg-titanium-900/90 backdrop-blur-md flex items-center justify-center p-2 sm:p-6 transition-all duration-300">
+    <div class="relative w-full max-w-[78vw] max-h-[78vh] flex flex-col items-center justify-center">
         <!-- Close Button -->
-        <button onclick="closeLightbox()" class="absolute -top-12 right-0 text-white hover:text-aero-500 font-bold text-3xl focus:outline-none bg-titanium-800/80 w-10 h-10 rounded-full flex items-center justify-center border border-white/20 transition-colors">
+        <button onclick="closeLightbox()" class="absolute -top-10 right-2 sm:top-2 sm:right-2 z-10 text-white hover:text-aero-500 font-bold text-2xl focus:outline-none bg-titanium-800/90 w-10 h-10 rounded-full flex items-center justify-center border border-white/20 transition-colors shadow-lg">
             &times;
         </button>
-        <!-- Expanded Image -->
-        <img id="modalImage" src="" alt="" class="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl border border-white/10">
+        <!-- Expanded Image (Proportional & Maximum Size) -->
+        <img id="modalImage" src="" alt="" class="max-w-full max-h-[68vh] w-auto h-auto object-contain rounded-lg shadow-2xl border border-white/10">
         <!-- Image Caption -->
-        <p id="modalCaption" class="text-white text-xs font-medium mt-3 text-center bg-titanium-900/80 px-4 py-1.5 rounded-full border border-white/10"></p>
+        <p id="modalCaption" class="text-white text-xs font-medium mt-2 text-center bg-titanium-900/80 px-4 py-1.5 rounded-full border border-white/10 shadow-md"></p>
     </div>
 </div>
 
