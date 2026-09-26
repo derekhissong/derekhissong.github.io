@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Derek Hissong | Aerospace Structures & Mechanical Engineering</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        aero: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            500: '#0284c7',
+                            600: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        titanium: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Structural CAD Engineering Grid Pattern */
+        .bg-grid-pattern {
+            background-color: #f8fafc;
+            background-image: radial-gradient(#cbd5e1 1px, transparent 1px), radial-gradient(#cbd5e1 1px, #f8fafc 1px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+        }
+    </style>
+</head>
+<body class="bg-grid-pattern text-titanium-800 font-sans antialiased selection:bg-aero-500 selection:text-white">
+
+    <!-- 1. NAVIGATION HEADER -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-white/80 border-b border-titanium-200 shadow-sm">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div>
+                <a href="#" class="font-heading font-bold text-xl text-titanium-900 tracking-tight flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-aero-500 inline-block"></span>
+                    Derek Hissong
+                </a>
+                <p class="text-xs text-titanium-700 font-medium">M.S. Mechanical Engineering | University of Washington</p>
+            </div>
+            <nav class="flex items-center gap-6 text-sm font-semibold text-titanium-700">
+                <a href="#about" class="hover:text-aero-600 transition-colors">About</a>
+                <a href="#projects" class="hover:text-aero-600 transition-colors">Projects</a>
+                <a href="#skills" class="hover:text-aero-600 transition-colors">Skills</a>
+                <a href="Derek Hissong - Master Resume.pdf" target="_blank" class="px-3.5 py-1.5 rounded-md bg-titanium-900 text-white text-xs hover:bg-aero-600 transition-all shadow-sm">Resume PDF</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 py-12 space-y-16">
+
+        <!-- 2 & 3. ABOUT ME + INTEGRATED CONTACT SECTION -->
+        <section id="about" class="scroll-mt-24">
+            <div class="bg-white rounded-2xl border border-titanium-200 shadow-xl overflow-hidden">
+                <div class="p-8 sm:p-10 flex flex-col md:flex-row gap-8 items-center md:items-start">
+                    <!-- Profile Photo -->
+                    <div class="shrink-0 relative group">
+                        <div class="w-44 h-44 sm:w-52 sm:h-52 rounded-2xl overflow-hidden border-2 border-titanium-200 shadow-md relative z-10">
+                            <img src="Headshot.jpg" alt="Derek Hissong Profile Photo" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div class="absolute -bottom-2 -right-2 w-full h-full bg-aero-100 rounded-2xl -z-0 border border-aero-500/20"></div>
+                    </div>
+
+                    <!-- Narrative -->
+                    <div class="space-y-4 flex-1">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-aero-50 border border-aero-100 text-aero-800 text-xs font-semibold">
+                            <span>Aerospace Structures & Materials</span>
+                        </div>
+                        <h1 class="font-heading text-2xl sm:text-3xl font-bold text-titanium-900">
+                            Engineering structural integrity, advanced composites, and fluid dynamics.
+                        </h1>
+                        <div class="text-titanium-700 space-y-3 text-sm leading-relaxed">
+                            <p>
+                                I am a master's student at the <strong>University of Washington</strong> studying Mechanical Engineering, holding a dual B.S./B.A. degree in Mechanical Engineering from the <strong>University of San Diego</strong>.
+                            </p>
+                            <p>
+                                My primary interest lies in the <strong>design, analysis, and testing of aerospace structures</strong>. I address engineering challenges by integrating insights across multiple domains—from solid mechanics and material science to thermofluid analysis.
+                            </p>
+                            <p class="text-aero-900 font-medium bg-aero-50/60 p-3 rounded-lg border-l-2 border-aero-500">
+                                🚀 Currently seeking internship positions for Summer 2027 in aerospace structure design, composite testing, and analysis.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- INTEGRATED CONTACT BAR (At bottom of About card) -->
+                <div class="bg-titanium-50 px-8 py-5 border-t border-titanium-200 flex flex-wrap items-center justify-between gap-4">
+                    <span class="text-xs font-bold uppercase tracking-wider text-titanium-700">Get in Touch:</span>
+                    <div class="flex flex-wrap items-center gap-3 text-xs font-semibold">
+                        <!-- Email Link -->
+                        <a href="mailto:derekhissong14@gmail.com" class="flex items-center gap-2 px-3.5 py-2 rounded-lg bg-white border border-titanium-200 text-titanium-800 hover:border-aero-500 hover:text-aero-600 transition-all shadow-sm">
+                            <svg class="w-4 h-4 text-aero-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 002-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            derekhissong14@gmail.com
+                        </a>
+                        <!-- LinkedIn Link -->
+                        <a href="https://www.linkedin.com/in/derek-hissong-416b6b229/" target="_blank" class="flex items-center gap-2 px-3.5 py-2 rounded-lg bg-white border border-titanium-200 text-titanium-800 hover:border-aero-500 hover:text-aero-600 transition-all shadow-sm">
+                            <svg class="w-4 h-4 text-aero-500" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                            LinkedIn
+                        </a>
+                        <!-- Resume Link -->
+                        <a href="Derek Hissong - Master Resume.pdf" target="_blank" class="flex items-center gap-2 px-3.5 py-2 rounded-lg bg-titanium-900 text-white hover:bg-aero-600 transition-all shadow-sm">
+                            <svg class="w-4 h-4 text-aero-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            Resume PDF
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. PROJECTS SECTION -->
+        <section id="projects" class="scroll-mt-24 space-y-8">
+            <div class="flex items-center justify-between border-b border-titanium-200 pb-4">
+                <div>
+                    <h2 class="font-heading text-2xl font-bold text-titanium-900">Featured Projects</h2>
+                    <p class="text-xs text-titanium-700 mt-1">Research, Industry Internships, and Computational Simulations</p>
+                </div>
+                <span class="text-xs font-mono text-titanium-700 bg-white border border-titanium-200 px-3 py-1 rounded-md">04 Selected Works</span>
+            </div>
+
+            <div class="grid grid-cols-1 gap-8">
+
+                <!-- PROJECT 1 -->
+                <article class="bg-white rounded-2xl border border-titanium-200 shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col md:flex-row">
+                    <div class="md:w-5/12 bg-titanium-100 relative overflow-hidden group min-h-[240px]">
+                        <img src="CF Heated Tool.jpg" alt="Composite Heated Tooling" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-3 left-3 bg-titanium-900/90 backdrop-blur-md text-white text-[10px] font-semibold tracking-wider uppercase px-2.5 py-1 rounded">
+                            Summer 2026 Intern
+                        </div>
+                    </div>
+                    <div class="p-6 md:w-7/12 flex flex-col justify-between space-y-4">
+                        <div>
+                            <div class="flex flex-wrap gap-1.5 mb-2">
+                                <span class="px-2 py-0.5 bg-titanium-100 text-titanium-700 text-[11px] rounded font-medium">Composite Manufacturing</span>
+                                <span class="px-2 py-0.5 bg-titanium-100 text-titanium-700 text-[11px] rounded font-medium">SolidWorks CAM</span>
+                                <span class="px-2 py-0.5 bg-titanium-100 text-titanium-700 text-[11px] rounded font-medium">3-Axis CNC</span>
+                            </div>
+                            <h3 class="font-heading text-xl font-bold text-titanium-900">Boat R&D Engineering Intern — Common Fibers</h3>
+                            <p class="text-xs text-aero-600 font-semibold mt-0.5">Role: Lead Engineering Intern</p>
+                        </div>
+
+                        <div class="space-y-2 text-xs text-titanium-700 leading-relaxed">
+                            <p><strong class="text-titanium-900">Problem:</strong> Common Fibers sought to expand into affordable composite outdoor vehicles. Objectives included evaluating UV degradation on composites and drastically shortening post-layup cure cycles.</p>
+                            <p><strong class="text-titanium-900">Approach:</strong> Hand-laid 15 composite test panels across dry fiber, prepreg, and fiberglass laminates with 3 resin variants for UV testing. Engineered a resistively heated fiberglass tool/mold using 3-axis CNC machined foam plugs (SolidWorks CAM) with integrated embedded heating wires.</p>
+                            <p><strong class="text-titanium-900">Result:</strong> Established flexural test protocols for UV degradation. Completed post-cure mold testing at 140°F and 200°F. Despite thermal damage during initial trial, verified dimensional accuracy against SolidWorks CAD specifications.</p>
+                        </div>
+
+                        <div class="pt-2">
+                            <a href="Derek Hissong - Intern Report 2026 - Google Docs.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-aero-600 hover:text-aero-800 transition-colors">
+                                View Full Intern Report &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PROJECT 2 -->
+                <article class="bg-white rounded-2xl border border-titanium-200 shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col md:flex-row">
+                    <div class="md:w-5/12 bg-titanium-100 relative overflow-hidden group min-h-[240px]">
+                        <img src="SSDM.jpg" alt="ASME SSDM Research Presentation" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-3 left-3 bg-titanium-900/90 backdrop-blur-md text-white text-[10px] font-semibold tracking-wider uppercase px-2.5 py-1 rounded">
+                            ASME SSDM Conference
+                        </div>
+                    </div>
+                    <div class="p-6 md:w-7/12 flex flex-col justify-between space-y-4">
+                        <div>
+                            <div class="flex flex-wrap gap-1.5 mb-2">
+                                <span class="px-2 py-0.5 bg-titanium-100 text-titanium-700 text-[11px] rounded font-medium">DMA Testing</span>
+                                <span class="px-2 py-0.5 bg-titanium-100 text-titanium-700 text-[11px] rounded font-medium">CFRP Mechanics</span>
+                                <span class="px-2 py-0.5 bg-titanium-100 text-titanium-700 text-[11px] rounded font-medium">Viscoelasticity</span>
+                            </div>
+                            <h3 class="font-heading text-xl font-bold text-titanium-900">Microstructural Defects in Upcycled Composites</h3>
+                            <p class="text-xs text-aero-600 font-semibold mt-0.5">Role: Lead Researcher | Aug 2025 – June 2026</p>
+                        </div>
+
+                        <div class="space-y-2 text-xs text-titanium-700 leading-relaxed">
+                            <p><strong class="text-titanium-900">Problem:</strong> Investigate how microstructural defects in thermally-bound discontinuous composites (TBDCs) influence viscoelastic behavior compared to virgin Carbon Fiber Reinforced Polymers (CFRP).</p>
+                            <p><strong class="text-titanium-900">Approach:</strong> Conducted experimental dynamic mechanical analysis using a TA Instruments DMA Q800 (0.01% strain). Executed temperature sweeps (35°C to 250°C at 3°C/min, 1.0 Hz) and isothermal stress relaxation tests at Tg (130°C for 10 minutes).</p>
+                            <p><strong class="text-titanium-900">Result:</strong> Presented findings at the ASME Structures, Structural Dynamics, and Materials Conference (Long Beach, CA). *Full quantitative dataset to be updated post-publication.*</p>
+                        </div>
+
+                        <div class="pt-2">
+                            <a href="https://ssdm.secure-platform.com/a/solicitations/269/sessiongallery/23128/application/187937" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-aero-600 hover:text-aero-800 transition-colors">
+                                View ASME Abstract &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PROJECT 3 -->
+                <article class="bg-white rounded-2xl border border-titanium-200 shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col md:flex-row">
+                    <div class="md:w-5/12 bg-titanium-100 relative overflow-hidden group min-h-[240px]">
+                        <img src="Airfoil Cover Photo.jpg" alt="Airfoil CFD Simulation" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-3 left-3 bg-titanium-900/90 backdrop-blur-md text-white text-[10px] font-semibold tracking-wider uppercase px-2.5 py-1 rounded">
+                            Aerodynamics
+                        </div>
+                    </div>
+                    <div class="p-6 md:w-7/12 flex flex-col justify-between space-y-4">
+                        <div>
+                            <div class="flex flex-wrap gap-1.5 mb-2">
+                                <span class="px-2 py-0.5 bg-titanium-100 text-titanium-700 text-[11px] rounded font-medium">ANSYS Fluent</span>
+                                <span class="px-2 py-0.5 bg-titanium-100 text-titanium-700 text-[11px] rounded font-medium">CFD Analysis</span>
+                                <span class="px-2 py-0.5 bg-titanium-100 text-titanium-700 text-[11px] rounded font-medium">Fluid Mechanics</span>
+                            </div>
+                            <h3 class="font-heading text-xl font-bold text-titanium-900">Airfoil Angle of Attack CFD Simulation</h3>
+                            <p class="text-xs text-aero-600 font-semibold mt-0.5">Computational Aerodynamics Study</p>
+                        </div>
+
+                        <div class="space-y-2 text-xs text-titanium-700 leading-relaxed">
+                            <p><strong class="text-titanium-900">Problem:</strong> Quantify the effect of an airfoil's Angle of Attack (AoA) on flow velocity and pressure fields while validating numerical drag results against analytical models.</p>
+                            <p><strong class="text-titanium-900">Approach:</strong> Modeled domain interaction using ANSYS Fluent Boolean extraction. Simulated flow fields across three discrete AoA conditions (7°, 10°, and 15°) by altering relative domain flow vectors.</p>
+                            <p><strong class="text-titanium-900">Result:</strong> Mapped pressure/velocity gradients highlighting stagnation point dynamics. Analytical verification uncovered drag coefficient anomalies under domain manipulation, demonstrating the vital importance of domain setup in solver accuracy.</p>
+                        </div>
+
+                        <div class="pt-2">
+                            <a href="Hissong - HW7 - Solutions.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-aero-600 hover:text-aero-800 transition-colors">
+                                View Airfoil CFD Report &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PROJECT 4 -->
+                <article class="bg-white rounded-2xl border border-titanium-200 shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col md:flex-row">
+                    <div class="md:w-5/12 bg-titanium-100 relative overflow-hidden group min-h-[240px]">
+                        <img src="Exchanger Cover Photo.jpg" alt="Heat Exchanger Simulation" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-3 left-3 bg-titanium-900/90 backdrop-blur-md text-white text-[10px] font-semibold tracking-wider uppercase px-2.5 py-1 rounded">
+                            Thermal Analysis
+                        </div>
+                    </div>
+                    <div class="p-6 md:w-7/12 flex flex-col justify-between space-y-4">
+                        <div>
+                            <div class="flex flex-wrap gap-1.5 mb-2">
+                                <span class="px-2 py-0.5 bg-titanium-100 text-titanium-700 text-[11px] rounded font-medium">ANSYS Fluent</span>
+                                <span class="px-2 py-0.5 bg-titanium-100 text-titanium-700 text-[11px] rounded font-medium">Thermal Transfer</span>
+                                <span class="px-2 py-0.5 bg-titanium-100 text-titanium-700 text-[11px] rounded font-medium">Meshing</span>
+                            </div>
+                            <h3 class="font-heading text-xl font-bold text-titanium-900">Heat Exchanger CFD Thermal Simulation</h3>
+                            <p class="text-xs text-aero-600 font-semibold mt-0.5">Thermofluid Simulation & Verification</p>
+                        </div>
+
+                        <div class="space-y-2 text-xs text-titanium-700 leading-relaxed">
+                            <p><strong class="text-titanium-900">Problem:</strong> Model thermal distribution and fluid dynamics through a cold-plate heat exchanger and verify conservation equations numerical convergence.</p>
+                            <p><strong class="text-titanium-900">Approach:</strong> Imported CAD from McMaster-Carr into ANSYS Fluent. Generated independent meshing for fluid domain and piping walls. Simulated water flow at 340K inlet temperature.</p>
+                            <p><strong class="text-titanium-900">Result:</strong> Captured gradient fields across outer piping and symmetry planes. Verified mass flow and heat transfer rate equilibrium (net flux = 0), confirming total Conservation of Mass and Energy.</p>
+                        </div>
+
+                        <div class="pt-2">
+                            <a href="Hissong - Design Project - Heat Exchanger - MENG465.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-aero-600 hover:text-aero-800 transition-colors">
+                                View Heat Exchanger Report &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section id="skills" class="scroll-mt-24 space-y-6">
+            <h2 class="font-heading text-xl font-bold text-titanium-900 border-b border-titanium-200 pb-3">Technical Competencies</h2>
+            <div class="flex flex-wrap gap-2.5">
+                <span class="px-3 py-1.5 bg-white border border-titanium-200 text-titanium-800 rounded-lg text-xs font-semibold shadow-sm hover:border-aero-500 transition-colors">Abaqus FEA</span>
+                <span class="px-3 py-1.5 bg-white border border-titanium-200 text-titanium-800 rounded-lg text-xs font-semibold shadow-sm hover:border-aero-500 transition-colors">SolidWorks CAD & CAM</span>
+                <span class="px-3 py-1.5 bg-white border border-titanium-200 text-titanium-800 rounded-lg text-xs font-semibold shadow-sm hover:border-aero-500 transition-colors">ANSYS Fluent CFD</span>
+                <span class="px-3 py-1.5 bg-white border border-titanium-200 text-titanium-800 rounded-lg text-xs font-semibold shadow-sm hover:border-aero-500 transition-colors">MATLAB</span>
+                <span class="px-3 py-1.5 bg-white border border-titanium-200 text-titanium-800 rounded-lg text-xs font-semibold shadow-sm hover:border-aero-500 transition-colors">Python</span>
+                <span class="px-3 py-1.5 bg-white border border-titanium-200 text-titanium-800 rounded-lg text-xs font-semibold shadow-sm hover:border-aero-500 transition-colors">3-Axis CNC Machining</span>
+                <span class="px-3 py-1.5 bg-white border border-titanium-200 text-titanium-800 rounded-lg text-xs font-semibold shadow-sm hover:border-aero-500 transition-colors">Vertical Mill & Lathe</span>
+                <span class="px-3 py-1.5 bg-white border border-titanium-200 text-titanium-800 rounded-lg text-xs font-semibold shadow-sm hover:border-aero-500 transition-colors">Composite Fabrication</span>
+                <span class="px-3 py-1.5 bg-white border border-titanium-200 text-titanium-800 rounded-lg text-xs font-semibold shadow-sm hover:border-aero-500 transition-colors">Project Management</span>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-titanium-200 bg-white py-8 mt-20">
+        <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center text-xs text-titanium-700 gap-4">
+            <p>© 2026 Derek Hissong. All rights reserved.</p>
+            <p class="font-mono">Aerospace Structures & Mechanical Engineering Portfolio</p>
+        </div>
+    </footer>
+
+</body>
+</html>
