@@ -49,6 +49,35 @@
             background-size: 40px 40px;
             background-position: 0 0, 20px 20px;
         }
+
+        @media print {
+            /* Hide interactive UI elements from the printed PDF */
+            header, footer, #imageModal, button, nav {
+                display: none !important;
+            }
+        
+            /* Force clean white background and dark text for ink/paper */
+            body {
+                background: white !important;
+                color: #0f172a !important;
+                padding: 0 !important;
+            }
+        
+            /* Keep project cards cleanly separated without page breaks cutting through them */
+            article {
+                page-break-inside: avoid;
+                break-inside: avoid;
+                border: 1px solid #cbd5e1 !important;
+                box-shadow: none !important;
+                margin-bottom: 1.5rem !important;
+            }
+        
+            /* Adjust page margins */
+            @page {
+                margin: 0.5in;
+                size: A4 portrait;
+            }
+        }  
     </style>
 </head>
 <body class="bg-grid-pattern text-titanium-800 font-sans antialiased selection:bg-aero-500 selection:text-white">
@@ -68,6 +97,10 @@
                 <a href="#projects" class="hover:text-aero-600 transition-colors">Projects</a>
                 <a href="#skills" class="hover:text-aero-600 transition-colors">Skills</a>
                 <a href="Derek Hissong - Master Resume.pdf" target="_blank" class="px-3.5 py-1.5 rounded-md bg-titanium-900 text-white text-sm hover:bg-aero-600 transition-all shadow-sm">Resume PDF</a>
+                <button onclick="window.print()" class="px-3.5 py-1.5 rounded-md bg-aero-600 text-white text-xs hover:bg-aero-800 transition-all shadow-sm flex items-center gap-1.5">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    Export PDF
+                </button>
             </nav>
         </div>
     </header>
@@ -155,7 +188,7 @@
                              onclick="openLightbox(this.src, this.alt)" 
                              class="max-h-full max-w-full object-contain cursor-pointer hover:scale-[1.02] transition-transform duration-300">
                         <div class="absolute top-3 left-3 bg-titanium-900/90 backdrop-blur-md text-white text-[10px] font-semibold tracking-wider uppercase px-2.5 py-1 rounded">
-                            Summer 2026 Intern
+                            Summer 2026 Internship
                         </div>
                     </div>
                     <div class="p-6 md:w-7/12 flex flex-col justify-between space-y-4">
@@ -294,6 +327,42 @@
                     </div>
                 </article>
 
+                <!-- PROJECT 5 -->
+                <article class="bg-white rounded-2xl border border-titanium-200 shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col md:flex-row">
+                    <div class="md:w-5/12 bg-titanium-100/70 p-3 relative overflow-hidden group min-h-[240px] flex items-center justify-center">
+                        <img src="R and S.png" 
+                             alt="Construction" 
+                             onclick="openLightbox(this.src, this.alt)" 
+                             class="max-h-full max-w-full object-contain cursor-pointer hover:scale-[1.02] transition-transform duration-300">
+                        <div class="absolute top-3 left-3 bg-titanium-900/90 backdrop-blur-md text-white text-[10px] font-semibold tracking-wider uppercase px-2.5 py-1 rounded">
+                            Summer 2023 Internship
+                        </div>
+                    </div>
+                    <div class="p-6 md:w-7/12 flex flex-col justify-between space-y-4">
+                        <div>
+                            <div class="flex flex-wrap gap-1.5 mb-2">
+                                <span class="px-2 py-0.5 bg-titanium-100 text-titanium-700 text-[11px] rounded font-medium">Project Engineering</span>
+                                <span class="px-2 py-0.5 bg-titanium-100 text-titanium-700 text-[11px] rounded font-medium">Project Management</span>
+                                <span class="px-2 py-0.5 bg-titanium-100 text-titanium-700 text-[11px] rounded font-medium">Office 365 & Bluebeam Revu</span>
+                                <span class="px-2 py-0.5 bg-titanium-100 text-titanium-700 text-[11px] rounded font-medium">Construction Drawing Analysis</span>
+                            </div>
+                            <h3 class="font-heading text-xl font-bold text-titanium-900">USD Wellness Center Project Engineer Intern - Rudolph & Sletten GC</h3>
+                            <p class="text-base text-aero-600 font-semibold mt-0.5">Role: Project Engineer Intern</p>
+                        </div>
+
+                        <div class="space-y-2 text-base text-titanium-700 leading-relaxed">
+                            <p><strong class="text-titanium-900">Project:</strong> The Univeristy of San Diego hired Rudolph & Sletten GC to construct their new, 80,000 sqft Palomar Health Student Wellness Center.</p>
+                            <p><strong class="text-titanium-900">Approach:</strong> Analyzed construction drawings to indentify RFIs using Bluebeam Revu. Monitored and communicated daily with subcontractors to minimize construction delays.</p>
+                            <p><strong class="text-titanium-900">Result:</strong> Oversaw plan versus field variation on pile drilling and installation during subsurface phase of construction. Presented recorded variations to management for future cost reconcilation.</p>
+                        </div>
+
+                        <div class="pt-2">
+                            <a href="Let's Build! Summer 2023.pdf" target="_blank" class="inline-flex items-center gap-1.5 text-base font-semibold text-aero-600 hover:text-aero-800 transition-colors">
+                                View EoI Presentation &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </article>
             </div>
         </section>
 
