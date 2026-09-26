@@ -41,6 +41,10 @@
             }
         }
     </script>
+
+    <!-- html2pdf.js CDN (Converts live HTML DOM directly into a PDF) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    
     <style>
         /* Structural CAD Engineering Grid Pattern */
         .bg-grid-pattern {
@@ -97,9 +101,9 @@
                 <a href="#projects" class="hover:text-aero-600 transition-colors">Projects</a>
                 <a href="#skills" class="hover:text-aero-600 transition-colors">Skills</a>
                 <a href="Derek Hissong - Master Resume.pdf" target="_blank" class="px-3.5 py-1.5 rounded-md bg-titanium-900 text-white text-sm hover:bg-aero-600 transition-all shadow-sm">Resume PDF</a>
-                <button onclick="window.print()" class="px-3.5 py-1.5 rounded-md bg-aero-600 text-white text-xs hover:bg-aero-800 transition-all shadow-sm flex items-center gap-1.5">
+                <button onclick="downloadPDF()" class="px-3.5 py-1.5 rounded-md bg-aero-600 text-white text-xs font-semibold hover:bg-aero-800 transition-all shadow-sm flex items-center gap-1.5">
                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                    Export PDF
+                    Portfolio PDF
                 </button>
             </nav>
         </div>
@@ -471,6 +475,26 @@
     document.getElementById('imageModal').addEventListener('click', function(e) {
         if (e.target === this) closeLightbox();
     });
+</script>
+
+<script>
+function downloadPDF() {
+    // Select the main content container of your website
+    const element = document.querySelector('main');
+
+    // PDF generation settings
+    const opt = {
+        margin:       [0.4, 0.4, 0.4, 0.4], // Margins (top, left, bottom, right in inches)
+        filename:     'Derek_Hissong_Engineering_Portfolio.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2, useCORS: true }, // High DPI for sharp text and photos
+        jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' },
+        pagebreak:    { mode: ['avoid-all', 'css', 'legacy'] }
+    };
+
+    // Generate and trigger browser download
+    html2pdf().set(opt).from(element).save();
+}
 </script>
     
 </body>
