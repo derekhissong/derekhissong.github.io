@@ -6,6 +6,8 @@
     <title>Derek Hissong | Engineering Portfolio</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- html2pdf.js CDN (Exports Live Page to PDF) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -86,26 +88,39 @@
 </head>
 <body class="bg-grid-pattern text-titanium-800 font-sans antialiased selection:bg-aero-500 selection:text-white">
 
-    <!-- 1. NAVIGATION HEADER -->
-    <header class="sticky top-0 z-50 backdrop-blur-md bg-white/80 border-b border-titanium-200 shadow-sm">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+    <!-- 2-LINE NAVIGATION HEADER -->
+    <header class="sticky top-0 z-40 backdrop-blur-md bg-white/85 border-b border-titanium-200 shadow-sm">
+        <div class="max-w-6xl mx-auto px-6 py-3 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <!-- Left: Name & Title -->
             <div>
                 <a href="#" class="font-heading font-bold text-xl text-titanium-900 tracking-tight flex items-center gap-2">
                     <span class="w-2.5 h-2.5 rounded-full bg-aero-500 inline-block"></span>
                     Derek Hissong
                 </a>
-                <p class="text-sm text-titanium-700 font-medium">M.S. Mechanical Engineering student at the University of Washington</p>
+                <p class="text-xs text-titanium-700 font-medium">M.S. Mechanical Engineering | University of Washington</p>
             </div>
-            <nav class="flex items-center gap-6 text-sm font-semibold text-titanium-700">
-                <a href="#about" class="hover:text-aero-600 transition-colors">About</a>
-                <a href="#projects" class="hover:text-aero-600 transition-colors">Projects</a>
-                <a href="#skills" class="hover:text-aero-600 transition-colors">Skills</a>
-                <a href="Derek Hissong - Master Resume.pdf" target="_blank" class="px-3.5 py-1.5 rounded-md bg-titanium-900 text-white text-sm hover:bg-aero-600 transition-all shadow-sm">Resume PDF</a>
-                <button onclick="downloadPDF()" class="px-3.5 py-1.5 rounded-md bg-aero-600 text-white text-xs font-semibold hover:bg-aero-800 transition-all shadow-sm flex items-center gap-1.5">
-                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                    Portfolio PDF
-                </button>
-            </nav>
+    
+            <!-- Right: 2-Line Stacked Navigation -->
+            <div class="flex flex-col items-center sm:items-end gap-2">
+                <!-- Line 1: Action Buttons -->
+                <div class="flex items-center gap-2">
+                    <button onclick="downloadPDF()" class="px-3 py-1 rounded-md bg-aero-600 text-white text-xs font-semibold hover:bg-aero-800 transition-all shadow-sm flex items-center gap-1.5">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                        Portfolio PDF
+                    </button>
+                    <a href="Derek Hissong - Master Resume.pdf" target="_blank" class="px-3 py-1 rounded-md bg-titanium-900 text-white text-xs font-semibold hover:bg-aero-600 transition-all shadow-sm">
+                        Resume PDF
+                    </a>
+                </div>
+    
+                <!-- Line 2: Section Navigation -->
+                <nav class="flex items-center gap-5 text-xs font-bold text-titanium-700 uppercase tracking-wider">
+                    <a href="#about" class="hover:text-aero-600 transition-colors">About</a>
+                    <a href="#projects" class="hover:text-aero-600 transition-colors">Projects</a>
+                    <a href="#skills" class="hover:text-aero-600 transition-colors">Skills</a>
+                    <a href="#gallery" class="hover:text-aero-600 transition-colors">Gallery</a>
+                </nav>
+            </div>
         </div>
     </header>
 
@@ -428,6 +443,56 @@
             </div>
         </section>
 
+        <!-- GALLERY SECTION (3-Column Grid) -->
+        <section id="gallery" class="scroll-mt-24 space-y-6">
+            <div class="flex items-center justify-between border-b border-titanium-200 pb-3">
+                <div>
+                    <h2 class="font-heading text-2xl font-bold text-titanium-900">Engineering Gallery</h2>
+                    <p class="text-xs text-titanium-700 mt-0.5">Click any image to view high-resolution details and engineering context.</p>
+                </div>
+                <span class="text-xs font-mono text-titanium-700 bg-white border border-titanium-200 px-3 py-1 rounded-md">Interactive Grid</span>
+            </div>
+        
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        
+                <!-- Gallery Item 1 -->
+                <div onclick="openLightbox('CF Heated Tool.jpg', 'Resistively Heated Fiberglass Tool', 'CNC-machined foam plug with embedded resistively heated wiring layers inside fiberglass laminates to accelerate layup cure cycles.')" 
+                     class="bg-white rounded-xl border border-titanium-200 shadow-sm overflow-hidden cursor-pointer group hover:shadow-md transition-all duration-300 flex flex-col">
+                    <div class="h-48 bg-titanium-100/80 p-3 flex items-center justify-center overflow-hidden">
+                        <img src="CF Heated Tool.jpg" alt="Tooling" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-3.5 border-t border-titanium-100 flex items-center justify-between">
+                        <h4 class="font-heading text-xs font-bold text-titanium-900 group-hover:text-aero-600">Heated Tooling Assembly</h4>
+                        <span class="text-[10px] font-semibold text-aero-600 bg-aero-50 px-2 py-0.5 rounded">Expand &rarr;</span>
+                    </div>
+                </div>
+        
+                <!-- Gallery Item 2 -->
+                <div onclick="openLightbox('SSDM.jpg', 'Viscoelastic Stress Relaxation Testing', 'TA Instruments DMA Q800 setup for stress relaxation and glass transition temperature (Tg) evaluation on upcycled CFRP composites.')" 
+                     class="bg-white rounded-xl border border-titanium-200 shadow-sm overflow-hidden cursor-pointer group hover:shadow-md transition-all duration-300 flex flex-col">
+                    <div class="h-48 bg-titanium-100/80 p-3 flex items-center justify-center overflow-hidden">
+                        <img src="SSDM.jpg" alt="DMA Testing" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-3.5 border-t border-titanium-100 flex items-center justify-between">
+                        <h4 class="font-heading text-xs font-bold text-titanium-900 group-hover:text-aero-600">DMA Q800 Test Setup</h4>
+                        <span class="text-[10px] font-semibold text-aero-600 bg-aero-50 px-2 py-0.5 rounded">Expand &rarr;</span>
+                    </div>
+                </div>
+        
+                <!-- Gallery Item 3 -->
+                <div onclick="openLightbox('Airfoil Cover Photo.jpg', 'Airfoil Flow Domain Velocity Fields', 'ANSYS Fluent velocity magnitude contours around a horizontally fixed airfoil domain highlighting stagnation point dynamics.')" 
+                     class="bg-white rounded-xl border border-titanium-200 shadow-sm overflow-hidden cursor-pointer group hover:shadow-md transition-all duration-300 flex flex-col">
+                    <div class="h-48 bg-titanium-100/80 p-3 flex items-center justify-center overflow-hidden">
+                        <img src="Airfoil Cover Photo.jpg" alt="CFD Airfoil" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-3.5 border-t border-titanium-100 flex items-center justify-between">
+                        <h4 class="font-heading text-xs font-bold text-titanium-900 group-hover:text-aero-600">Airfoil Velocity Contours</h4>
+                        <span class="text-[10px] font-semibold text-aero-600 bg-aero-50 px-2 py-0.5 rounded">Expand &rarr;</span>
+                    </div>
+                </div>
+        
+            </div>
+        </section>
     </main>
 
     <!-- FOOTER -->
@@ -499,6 +564,75 @@ function downloadPDF() {
     // Generate and trigger browser download
     html2pdf().set(opt).from(element).save();
 }
+</script>
+
+<!-- LIGHTBOX POPUP MODAL WITH TITLE & DESCRIPTION -->
+<div id="imageModal" class="fixed inset-0 z-50 hidden bg-titanium-900/90 backdrop-blur-md flex items-center justify-center p-4 transition-all duration-300">
+    <div class="relative w-full max-w-[95vw] max-h-[95vh] flex flex-col items-center justify-center">
+        <!-- Close Button -->
+        <button onclick="closeLightbox()" class="absolute -top-10 right-2 sm:top-2 sm:right-2 z-10 text-white hover:text-aero-500 font-bold text-2xl focus:outline-none bg-titanium-800/90 w-10 h-10 rounded-full flex items-center justify-center border border-white/20 transition-colors shadow-lg">
+            &times;
+        </button>
+        
+        <!-- Expanded Image -->
+        <img id="modalImage" src="" alt="" class="max-w-full max-h-[75vh] w-auto h-auto object-contain rounded-lg shadow-2xl border border-white/10">
+        
+        <!-- Dynamic Title & Explanation Box -->
+        <div class="mt-3 text-center max-w-2xl bg-titanium-900/90 border border-white/10 p-3.5 rounded-xl shadow-xl">
+            <h3 id="modalTitle" class="text-white font-heading font-bold text-sm"></h3>
+            <p id="modalDescription" class="text-titanium-200 text-xs mt-1 leading-relaxed font-sans"></p>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Open Lightbox with Image + Title + Description
+    function openLightbox(src, title, description) {
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalDesc = document.getElementById('modalDescription');
+        
+        modalImg.src = src;
+        modalTitle.textContent = title || 'Engineering Visual';
+        modalDesc.textContent = description || '';
+        
+        modal.classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
+    }
+
+    // Close Lightbox
+    function closeLightbox() {
+        const modal = document.getElementById('imageModal');
+        modal.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+    }
+
+    // Close on ESC Key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === "Escape") closeLightbox();
+    });
+
+    // Close on Background Click
+    document.getElementById('imageModal').addEventListener('click', function(e) {
+        if (e.target === this) closeLightbox();
+    });
+
+    // Download PDF Function
+    function downloadPDF() {
+        // Target your main content area (add id="portfolio-content" to your <main> tag)
+        const element = document.querySelector('main');
+        const opt = {
+            margin:       [0.4, 0.4, 0.4, 0.4],
+            filename:     'Derek_Hissong_Engineering_Portfolio.pdf',
+            image:        { type: 'jpeg', quality: 0.98 },
+            html2canvas:  { scale: 2, useCORS: true },
+            jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' },
+            pagebreak:    { mode: ['avoid-all', 'css', 'legacy'] }
+        };
+
+        html2pdf().set(opt).from(element).save();
+    }
 </script>
     
 </body>
